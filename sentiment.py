@@ -13,7 +13,6 @@ class TweetStreamListner(StreamListener):
     
     def on_data(self, data):
         dict_data = json.loads(data)
-
         tweet = TextBlob(dict_data["text"])
 
         print tweet.sentiment.polarity
@@ -43,7 +42,6 @@ class TweetStreamListner(StreamListener):
                 
 
 if __name__ == '__main__':
-
     listener = TweetStreamListner()
 
     auth = OAuthHandler(consumer_key, consumer_secret)
